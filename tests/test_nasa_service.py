@@ -26,5 +26,5 @@ def test_feed_neos():
   start_date = '2020-01-01'
   end_date = '2020-01-08'
   res = feed_neos(start_date, end_date)
-  breakpoint()
   keys = list(res)
+  assert keys == ['links', 'element_count', 'near_earth_objects']
