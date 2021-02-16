@@ -2,24 +2,21 @@ import datetime, calendar, math
 from .services import feed_neos
 
 def month_closest_approaches(start_date):
-  asteroids = {'month': start_date, 'element_count':0, 'near_earth_objects':{}}
   num_days = num_days_in_month(start_date)
   num_intervals = math.ceil(num_days/7)
   intervals = format_intervals(start_date, num_days, num_intervals)
+  results = loop_through_intervals(start_date, intervals)
+  return results
+
+def loop_through_intervals(start_date, intervals):
+  result = {'month': start_date, 'element_count':0, 'near_earth_objects':{}}
   for interval in intervals:
     # nasa_data = feed_neos(interval[0], interval[1])
     nasa_data = feed_neos('2020-01-01', '2020-01-04')
-    asteroids['element_count'] += nasa_data['element_count']
+    result['element_count'] += nasa_data['element_count']
     for k,v in nasa_data['near_earth_objects'].items():
-      asteroids['near_earth_objects'][k] = v
-  
-  breakpoint()
-
-def num_days_in_month(start_date):
-  date_list = start_date.split('-')
-  year = int(date_list[0])
-  month = int(date_list[1])
-  return calendar.monthrange(year, month)[1]
+      result['near_earth_objects'][k] = v
+  return result
 
 def format_intervals(start_date, num_days, num_intervals):
   intervals = []
@@ -31,3 +28,9 @@ def format_intervals(start_date, num_days, num_intervals):
     end_interval = f'{start_date}-{str(end).zfill(2)}'
     intervals.append([start_interval, end_interval])
   return intervals
+
+def num_days_in_month(start_date):
+  date_list = start_date.split('-')
+  year = int(date_list[0])
+  month = int(date_list[1])
+  return calendar.monthrange(year, month)[1]

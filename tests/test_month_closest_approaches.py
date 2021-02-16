@@ -11,5 +11,12 @@ def test_version():
     assert __version__ == '0.1.0'
 
 def test_month_closest_approaches():
-  res = month_closest_approaches('2020-02') 
+  res = month_closest_approaches('2020-01') 
+  assert list(res) == ['month', 'element_count', 'near_earth_objects']
+  assert res['month'] == '2020-01'
+  assert res['element_count'] == 290 
+  assert list(res['near_earth_objects']) == ['2020-01-01', '2020-01-02', '2020-01-03', '2020-01-04']
+  assert len(res['near_earth_objects']['2020-01-01']) == 14
+  assert len(res['near_earth_objects']['2020-01-02']) == 19
+  
 
