@@ -5,7 +5,7 @@ import json
 import os
 from dotenv import load_dotenv
 load_dotenv()
-from asteroids.services import browse_neos
+from asteroids.services import browse_neos, feed_neos
 
 def test_version():
     assert __version__ == '0.1.0'
@@ -21,3 +21,10 @@ def test_browse_neos():
   res = browse_neos()
   keys = list(res)
   assert keys == ['links', 'page', 'near_earth_objects']
+
+def test_feed_neos():
+  start_date = '2020-01-01'
+  end_date = '2020-01-08'
+  res = feed_neos(start_date, end_date)
+  breakpoint()
+  keys = list(res)
