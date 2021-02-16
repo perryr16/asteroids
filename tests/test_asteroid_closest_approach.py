@@ -10,13 +10,6 @@ from asteroids.asteroid_closest_approach import asteroid_closest_approach
 def test_version():
     assert __version__ == '0.1.0'
 
-def test_nasa():
-    key = os.getenv('NASA_KEY')
-    url = f'https://api.nasa.gov/neo/rest/v1/neo/browse?api_key={key}&page=1'
-    res = requests.get(url).json()
-    raw_keys = list(res)
-    assert raw_keys == ['links', 'page', 'near_earth_objects']
-
 def test_asteroid_closest_approach():
     asteroids = asteroid_closest_approach()
     assert asteroids[0]['links']
@@ -33,3 +26,18 @@ def test_asteroid_closest_approach():
     assert asteroids[0]['close_approach_data'] 
     assert asteroids[0]['orbital_data']
     assert asteroids[0]['is_sentry_object'] == False
+
+    assert asteroids[-1]['links']
+    assert asteroids[-1]['id']
+    assert asteroids[-1]['neo_reference_id']
+    assert asteroids[-1]['name']
+    # assert asteroids[-1]['name_limited']
+    assert asteroids[-1]['designation']
+    assert asteroids[-1]['nasa_jpl_url']
+    assert asteroids[-1]['absolute_magnitude_h']
+    assert asteroids[-1]['estimated_diameter']
+    # assert asteroids[-1]['is_potentially_hazardous_asteroid'] == False
+    assert asteroids[-1]['close_approach_data']
+    assert asteroids[-1]['close_approach_data'] 
+    assert asteroids[-1]['orbital_data']
+    assert asteroids[-1]['is_sentry_object'] == False

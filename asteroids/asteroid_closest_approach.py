@@ -1,6 +1,3 @@
-import requests 
-import os
-import json
 from .services import browse_neos
 
 
@@ -9,7 +6,7 @@ def asteroid_closest_approach():
   total_pages = nasa_data['page']['total_pages']
   total_pages = 4 # to prevent lengthy iteration during testing
   asteroids = loop_through_pages(total_pages, nasa_data, asteroids)
-  return asteroids
+  return asteroids # do I need to do a json.dumps?
 
 def loop_through_pages(total_pages, nasa_data, asteroids):
   for page in range(0, total_pages):
