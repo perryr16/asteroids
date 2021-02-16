@@ -11,7 +11,8 @@ def test_version():
     assert __version__ == '0.1.0'
 
 def test_month_closest_approaches():
-  res = month_closest_approaches('2020-01') 
+  res_json = month_closest_approaches('2020-01') 
+  res = json.loads(res_json)
   assert list(res) == ['month', 'element_count', 'near_earth_objects']
   assert res['month'] == '2020-01'
   assert res['element_count'] == 290 

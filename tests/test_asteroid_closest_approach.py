@@ -11,7 +11,8 @@ def test_version():
     assert __version__ == '0.1.0'
 
 def test_asteroid_closest_approach():
-    asteroids = asteroid_closest_approach()
+    asteroid_json = asteroid_closest_approach()
+    asteroids = json.loads(asteroid_json)
     assert asteroids[0]['links']
     assert asteroids[0]['id']
     assert asteroids[0]['neo_reference_id']
