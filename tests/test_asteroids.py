@@ -18,6 +18,6 @@ def test_version():
 #     assert raw_keys == ['links', 'page', 'near_earth_objects']
 
 def test_asteroid_closest_approach():
-    asteroid_closest_approach()
-    # keys = list(asteroids)
-    # assert keys = ['asteroids']
+    res = asteroid_closest_approach()
+    keys = list(res)
+    assert keys == ['asteroids']
