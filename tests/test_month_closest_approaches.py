@@ -8,7 +8,7 @@ load_dotenv()
 from asteroids.month_closest_approaches import month_closest_approaches
 
 def test_version():
-    assert __version__ == '0.1.0'
+  assert __version__ == '0.1.0'
 
 def test_month_closest_approaches():
   res_json = month_closest_approaches('2020-01') 
