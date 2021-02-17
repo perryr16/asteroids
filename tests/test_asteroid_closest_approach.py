@@ -6,10 +6,14 @@ import os
 from dotenv import load_dotenv
 load_dotenv()
 from asteroids.asteroid_closest_approach import asteroid_closest_approach
+import pytest
+# import vcr 
+# import pytest-vcr
 
 def test_version():
   assert __version__ == '0.1.0'
 
+@pytest.mark.vcr()
 def test_asteroid_closest_approach():
   asteroid_json = asteroid_closest_approach()
   asteroids = json.loads(asteroid_json)
