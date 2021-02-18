@@ -3,6 +3,7 @@ import unittest, requests, json, os, pytest
 from dotenv import load_dotenv
 load_dotenv()
 from asteroids.month_closest_approaches import month_closest_approaches
+import pytest
 
 def test_version():
   assert __version__ == '0.1.0'
