@@ -19,7 +19,7 @@ def test_asteroid_closest_approach():
     assert asteroids[i]['name']
     assert asteroids[i]['designation']
     assert asteroids[i]['nasa_jpl_url']
-    # assert asteroids[i]['absolute_magnitude_h']# key error at asteroid[7099]
+    # assert asteroids[i]['absolute_magnitude_h']# key error at asteroid[7099] 
     # assert asteroids[i]['estimated_diameter']#
     assert asteroids[i]['close_approach_data']
     assert type(asteroids[i]['close_approach_data']) is dict
