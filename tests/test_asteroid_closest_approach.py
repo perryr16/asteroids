@@ -7,8 +7,7 @@ from dotenv import load_dotenv
 load_dotenv()
 from asteroids.asteroid_closest_approach import asteroid_closest_approach
 import pytest
-# import vcr 
-# import pytest-vcr
+
 
 def test_version():
   assert __version__ == '0.1.0'

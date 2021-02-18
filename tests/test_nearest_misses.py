@@ -3,10 +3,12 @@ import unittest, requests, json, os
 from dotenv import load_dotenv
 load_dotenv()
 from asteroids.nearest_misses import nearest_misses
+import pytest
 
 def test_version():
   assert __version__ == '0.1.0'
 
+@pytest.mark.vcr()
 def test_nearest_misses():
   asteroids_json = nearest_misses()
   asteroids = json.loads(asteroids_json)
