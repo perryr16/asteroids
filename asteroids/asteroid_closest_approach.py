@@ -11,7 +11,6 @@ def asteroid_closest_approach(page_limit = None):
 
 def loop_through_pages(total_pages, nasa_data, asteroids):
   for page in range(0, total_pages):
-    # print (page)
     nasa_data = browse_neos(page)
     asteroids = find_closest_approach_and_append(nasa_data, asteroids)
   return asteroids
