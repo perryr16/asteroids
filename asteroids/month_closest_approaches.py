@@ -11,8 +11,8 @@ def month_closest_approaches(start_date):
 def loop_through_intervals(start_date, intervals):
   results = {'month': start_date, 'element_count':0, 'near_earth_objects':{}}
   for interval in intervals:
-    # nasa_data = feed_neos(interval[0], interval[1])
-    nasa_data = feed_neos('2020-01-01', '2020-01-04')
+    nasa_data = feed_neos(interval[0], interval[1])
+    # nasa_data = feed_neos('2020-01-01', '2020-01-04')
     results['element_count'] += nasa_data['element_count']
     for k,v in nasa_data['near_earth_objects'].items():
       results['near_earth_objects'][k] = v
