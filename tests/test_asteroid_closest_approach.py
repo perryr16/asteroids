@@ -1,12 +1,8 @@
 from asteroids import __version__
-import unittest
-import requests
-import json
-import os
+import unittest, requests, json, os, pytest
 from dotenv import load_dotenv
 load_dotenv()
 from asteroids.asteroid_closest_approach import asteroid_closest_approach
-import pytest
 
 
 def test_version():

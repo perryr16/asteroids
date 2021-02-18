@@ -1,9 +1,8 @@
 from asteroids import __version__
-import unittest, requests, json, os
+import unittest, requests, json, os, pytest
 from dotenv import load_dotenv
 load_dotenv()
 from asteroids.nearest_misses import nearest_misses
-import pytest
 
 def test_version():
   assert __version__ == '0.1.0'

@@ -1,12 +1,8 @@
 from asteroids import __version__
-import unittest
-import requests
-import json
-import os
+import unittest, requests, json, os, pytest
 from dotenv import load_dotenv
 load_dotenv()
 from asteroids.month_closest_approaches import month_closest_approaches
-import pytest
 
 def test_version():
   assert __version__ == '0.1.0'
@@ -24,8 +20,7 @@ def test_month_closest_approaches():
             '2020-01-21', '2020-01-15', '2020-01-16', '2020-01-17', '2020-01-18', 
             '2020-01-19', '2020-01-22', '2020-01-23', '2020-01-24', '2020-01-25', 
             '2020-01-26', '2020-01-27', '2020-01-28', '2020-01-30', '2020-01-31', 
-            '2020-01-29',
-]
+            '2020-01-29']
   assert list(res['near_earth_objects']) == dates
   assert len(res['near_earth_objects']['2020-01-01']) == 14
   assert len(res['near_earth_objects']['2020-01-02']) == 19
