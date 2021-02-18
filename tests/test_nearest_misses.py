@@ -10,7 +10,6 @@ def test_version():
 
 @pytest.mark.vcr()
 def test_nearest_misses():
-  #limiting to 5 pages as I know asteroid_closest_approach is functional
   asteroids_json = nearest_misses(50)
   asteroids = json.loads(asteroids_json)
   d0 = asteroids[0]['close_approach_data']['miss_distance']['miles']
