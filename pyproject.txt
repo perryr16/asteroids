@@ -5,12 +5,11 @@ description = ""
 authors = ["Ross Perry <perryr16@gmail.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.8.7"
-pytest = "^6.2.2"
+python = "^2.7"
 pytest-vcr = "^1.0.2"
-vcrpy = "^4.1.1"
 
 [tool.poetry.dev-dependencies]
+pytest = "^4.6"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
