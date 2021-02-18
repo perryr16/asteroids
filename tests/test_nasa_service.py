@@ -1,8 +1,5 @@
 from asteroids import __version__
-import unittest
-import requests
-import json
-import os
+import unittest, requests, json, os, pytest
 from dotenv import load_dotenv
 load_dotenv()
 from asteroids.services import browse_neos, feed_neos
@@ -10,7 +7,7 @@ import pytest
 
 def test_version():
     assert __version__ == '0.1.0'
-
+    
 @pytest.mark.vcr()
 def test_nasa():
     key = os.getenv('NASA_KEY')

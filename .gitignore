@@ -1,0 +1,3 @@
+tests/cassettes
+tests/__pycache__
+asteroids/__pycache__

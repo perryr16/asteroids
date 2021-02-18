@@ -1,6 +1,4 @@
-import requests 
-import os
-import json
+import requests, os, json
 
 def browse_neos(page_num = 0):
   key = os.getenv('NASA_KEY')
